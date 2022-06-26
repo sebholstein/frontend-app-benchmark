@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lighthouse https://news.ycombinator.com/ --only-categories performance --save-assets --output-path=./run/lighthouse-results.html --output json --output html --output csv"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lighthouse": "^9.6.2"
+  }
 }
