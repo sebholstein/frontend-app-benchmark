@@ -1,5 +1,5 @@
 import { ApplicationType } from '../models/application-type.model';
-import { Component, createEffect } from 'solid-js';
+import { Component } from 'solid-js';
 
 export interface BenchmarksNavProps {
   appType: ApplicationType;
