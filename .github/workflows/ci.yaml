@@ -28,6 +28,8 @@ jobs:
           cache: 'pnpm'
 
       - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
         with:
           version: 7
           run_install: false
