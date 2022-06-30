@@ -1,1 +1,4 @@
 node_modules
+.turbo
+.cache
+.DS_Store

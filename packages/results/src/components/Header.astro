@@ -1,0 +1,36 @@
+---
+import { RESULTS_DATA_URL } from "../api-url";
+import { ApplicationType } from "../models/application-type.model";
+const typesResp = await fetch(RESULTS_DATA_URL + '/application-types.json');
+const types: ApplicationType[] = await typesResp.json();
+const { appTypeId } = Astro.params;
+---
+
+<div class="h-28 bg-[url('/images/header-bg.svg')] flex items-center flex-row px-8">
+    <a href="/" class="mr-auto grow-0 flex items-center text-4xl">
+        <img src="/images/logo.svg" class="mr-4" alt="The Frontend App Benchmark" width="450" />
+    </a>
+    <div class="space-x-3 flex items-center">
+        <a
+            class="inline-flex items-center px-4 py-2 font-medium text-white bg-fuchsia-700 hover:bg-fuchsia-600 rounded hover:cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px]m mr-1" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg> Docs</a>
+        <a
+            class="inline-flex space-x-2 items-center flex-initial px-4 py-2 font-medium text-white bg-gray-500 hover:bg-gray-400 rounded hover:cursor-pointer">
+            <div class="mr-1"><img src="/images/github.svg" width="16" height="16" /></div> Github
+        </a>
+    </div>
+</div>
+<div class="px-8 border-bottom flex items-end space-x-3 border-1 border border-x-0 border-t-0 border-gray-600">
+    {types.map(type => (
+    <a href={"/app-type/"+type.id+"/benchmark/"+type.benchmarks[0].id} class={`p-3 space-x-3 hover:text-fuchsia-400
+        items-center flex border-2 border-x-0 border-t-0 border-transparent content-center ` + (appTypeId==type.id
+        ? 'border-b-fuchsia-500' : '' )}>
+        <div>{type.name}</div>
+        <div class=" bg-gray-300 text-gray-900 p-0.5 px-1 text-xs rounded">{type.apps}</div>
+    </a>
+    ))}
+</div>

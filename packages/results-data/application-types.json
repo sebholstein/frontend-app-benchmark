@@ -1,0 +1,20 @@
+[
+  {
+    "id": "hacker-news",
+    "name": "Hacker News",
+    "apps": 32,
+    "benchmarks": [
+      { "id": "front-page", "name": "Front page" },
+      { "id": "story-details", "name": "Story details" }
+    ]
+  },
+  {
+    "id": "ecommerce",
+    "name": "Ecommerce",
+    "apps": 15,
+    "benchmarks": [
+      { "id": "category-listing", "name": "Category listing" },
+      { "id": "product-details", "name": "Product details" }
+    ]
+  }
+]
