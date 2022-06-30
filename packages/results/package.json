@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "results",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,6 +7,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
+  },
+  "dependencies": {
+    "results-data": "workspace:*"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^0.2.2",

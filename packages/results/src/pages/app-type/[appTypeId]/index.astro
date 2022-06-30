@@ -1,18 +1,15 @@
 ---
-import { RESULTS_DATA_URL } from "../../../api-url";
 import BenchmarksNav from "../../../components/BenchmarksNav";
 import Layout from "../../../layouts/Layout.astro";
 import { ApplicationType } from "../../../models/application-type.model";
+import types from 'results-data/application-types.json';
 
 export async function getStaticPaths() {
-    const typesResp = await fetch(RESULTS_DATA_URL + '/application-types.json');
-    const types: ApplicationType[] = await typesResp.json();
     return types.map(t => ({ params: { appTypeId: t.id } }))
 }
 
 
-const typesResp = await fetch(RESULTS_DATA_URL + '/application-types.json');
-const types: ApplicationType[] = await typesResp.json();
+
 const type = types.find(t => t.id === Astro.params.appTypeId)
 ---
 

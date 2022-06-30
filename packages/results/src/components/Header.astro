@@ -1,8 +1,6 @@
 ---
-import { RESULTS_DATA_URL } from "../api-url";
 import { ApplicationType } from "../models/application-type.model";
-const typesResp = await fetch(RESULTS_DATA_URL + '/application-types.json');
-const types: ApplicationType[] = await typesResp.json();
+import types from 'results-data/application-types.json';
 const { appTypeId } = Astro.params;
 ---
 

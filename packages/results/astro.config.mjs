@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://js-app-benchmark.dev',
   integrations: [solid(), tailwind(), sitemap()],
   vite: {
     server: {
